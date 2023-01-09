@@ -111,7 +111,7 @@ class TestMain(unittest.TestCase):
         self.assertIn(expected_output, output)
         sys.stdin = sys.__stdin__
 
-    def robot_starts_outside_grid(self):
+    def test_robot_starts_outside_grid(self):
         # Tests for robot starting outside of the grid size that the user specified
         input_str = '1 1\n(1, 2, N) FFLFLFLFF\n(3, 3, E) FFLF\n\ny\n'
         sys.stdin = StringIO(input_str)
