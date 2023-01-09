@@ -28,7 +28,7 @@ class Robot:
             self.x -= 1
 
         #if outside grid dimensions, set robot to be lost
-        if not (0 <= self.x < grid_size[0] and 0 <= self.y < grid_size[1]):
+        if not (0 <= self.x <= grid_size[0] and 0 <= self.y <= grid_size[1]):
             self.lost = True
     
     #string representation of Robot object, when we print robot this will be how the information is returned as a string
@@ -64,6 +64,9 @@ def main():
     # Parse the grid size from user input, maps input string elements to integers in a tuple
     try:
         grid_size = tuple(map(int, user_input[0].split()))
+        if (grid_size[0] or grid_size[1]) < 0:
+            print("Grid size cannot be negative")
+            return
     except ValueError:
         print("Invalid grid size")
         return
@@ -79,6 +82,9 @@ def main():
             commands[:0] = command
         except ValueError:
             print("Invalid robot information")
+            return
+        if not (0 <= x <= grid_size[0] and 0 <= y <= grid_size[1]):
+            print(f"Robot ({robot_info}) starting conditions outside grid space")
             return
         robot = Robot(x, y, orientation, commands)
         robots.append(robot)
