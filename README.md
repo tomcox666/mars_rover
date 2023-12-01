@@ -1,14 +1,4 @@
 # mars_rover
-Multiverse engineering take-home challenge
-
-
-● Use any programming language you want.
-● It shouldn’t take longer than 2-3 hours.
-● Don’t worry if you don’t finish in the time. Please send over what you’ve achieved
-and a few sentences on what you would add next.
-● Please do not implement any UI for this. We just want to see the quality of your
-code - the console is fine for output.
-● Put your code online (e.g. in GitLab/GitHub) and send us the link.
 
 The problem - Mars Rover
 Write a program that takes in commands and moves one or more robots around
